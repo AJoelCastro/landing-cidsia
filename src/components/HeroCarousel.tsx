@@ -24,7 +24,7 @@ export default function HeroCarousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 5000);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -82,25 +82,7 @@ export default function HeroCarousel() {
           {images[index].caption}
         </h1>
       </div>
-      <div style={{ position: "absolute", bottom: 32, left: 0, width: "100%", textAlign: "center", zIndex: 2 }}>
-        {images.map((_, i) => (
-          <span
-            key={i}
-            style={{
-              display: "inline-block",
-              width: 12,
-              height: 12,
-              borderRadius: "50%",
-              background: i === index ? "#FFD27A" : "#fff8",
-              margin: "0 6px",
-              transition: "background 0.3s",
-              border: i === index ? "2px solid #FFD27A" : "2px solid #fff8",
-              cursor: "pointer",
-            }}
-            onClick={() => setIndex(i)}
-          />
-        ))}
-      </div>
+  {/* Eliminados los botones de navegación del carousel */}
       <div style={{
         position: "absolute",
         top: 0,
