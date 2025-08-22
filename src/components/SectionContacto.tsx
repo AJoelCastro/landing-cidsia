@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { Box, Typography, TextField, Button, Stack, Alert } from '@mui/material';
 
@@ -17,9 +18,13 @@ const SectionContacto: React.FC = () => {
   };
 
   return (
-    <Box id="contacto" sx={{ py: 8, px: { xs: 2, md: 8 }, bgcolor: 'background.paper' }}>
+    <Box id="contacto" sx={{ py: 8, px: { xs: 2, md: 8 }, bgcolor: 'background.paper' }} className="fade-in-up">
       <Typography variant="h4" fontWeight={700} color="primary.main" gutterBottom textAlign="center">
         Contáctanos
+      </Typography>
+      <Typography variant="body2" color="text.secondary" textAlign="center" mb={3}>
+        ¿Tienes un proyecto en mente o necesitas asesoría tecnológica? Completa el formulario y nuestro equipo se pondrá en contacto contigo en menos de 24 horas.<br />
+        También puedes escribirnos a <a href="mailto:contacto@cidsia.com" style={{ color: '#FFB347', textDecoration: 'underline' }}>contacto@cidsia.com</a> o llamarnos al <b>+51 969 742 589</b>.
       </Typography>
       <Stack component="form" onSubmit={handleSubmit} spacing={3} maxWidth={500} mx="auto">
         <TextField

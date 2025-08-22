@@ -24,14 +24,14 @@ const servicios = [
 ];
 
 const SectionServicios: React.FC = () => (
-  <Box id="servicios" sx={{ py: 8, px: { xs: 2, md: 8 }, bgcolor: 'background.paper' }}>
+  <Box id="servicios" sx={{ py: 8, px: { xs: 2, md: 8 }, bgcolor: 'background.paper' }} className="fade-in-up">
     <Typography variant="h4" fontWeight={700} color="primary.main" gutterBottom textAlign="center">
       Nuestros Servicios
     </Typography>
     <Grid container spacing={4} justifyContent="center">
-      {servicios.map((serv) => (
-  <Grid item xs={12} md={4} key={serv.title}>
-          <Paper elevation={3} sx={{ p: 4, textAlign: 'center', borderRadius: 4, minHeight: 220 }}>
+      {servicios.map((serv, i) => (
+        <Grid size={{xs:12, md:4}} key={serv.title} className="fade-in-up" style={{ animationDelay: `${0.2 + i * 0.15}s` }}>
+          <Paper elevation={3} sx={{ p: 4, textAlign: 'center', borderRadius: 4, minHeight: 220, transition: 'transform 0.3s, box-shadow 0.3s', '&:hover': { transform: 'translateY(-8px) scale(1.03)', boxShadow: 6 } }}>
             {serv.icon}
             <Typography variant="h6" fontWeight={600} mt={2} mb={1} color="text.primary">
               {serv.title}
@@ -39,6 +39,10 @@ const SectionServicios: React.FC = () => (
             <Typography variant="body2" color="text.secondary">
               {serv.desc}
             </Typography>
+            {/* Ejemplo extra */}
+            {serv.title === 'Desarrollo de Software' && <Typography variant="caption" color="text.secondary">ERP, e-commerce, apps móviles, APIs y más.</Typography>}
+            {serv.title === 'Inteligencia Artificial' && <Typography variant="caption" color="text.secondary">Chatbots, análisis predictivo, visión computacional.</Typography>}
+            {serv.title === 'Cloud & DevOps' && <Typography variant="caption" color="text.secondary">Azure, AWS, CI/CD, monitoreo y seguridad.</Typography>}
           </Paper>
         </Grid>
       ))}

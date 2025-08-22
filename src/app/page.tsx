@@ -1,4 +1,5 @@
-
+'use client';
+import HeroCarousel from '../components/HeroCarousel';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SectionNosotros from '../components/SectionNosotros';
@@ -9,12 +10,13 @@ import SectionContacto from '../components/SectionContacto';
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <SectionNosotros />
-      <SectionServicios />
-      <SectionClientes />
-      <SectionContacto />
-      <Footer />
+  <HeroCarousel />
+  <Navbar />
+  <SectionNosotros />
+  <SectionServicios />
+  <SectionClientes />
+  <SectionContacto />
+  <Footer />
     </>
   );
 }

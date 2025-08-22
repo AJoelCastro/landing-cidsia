@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
-import { ThemeProvider, CssBaseline } from '@mui/material';
-import theme from '../theme';
+import MuiProvider from '../components/MuiProvider';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 
 const geistSans = Geist({
@@ -29,11 +28,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{ background: '#F9F9F9', color: '#1A1A1A' }}>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
+        <MuiProvider>
           {children}
           <FloatingWhatsAppButton />
-        </ThemeProvider>
+        </MuiProvider>
       </body>
     </html>
   );
