@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
     <AppBar
       position="fixed"
       sx={{
-        background: scrolled ? '#282120' : 'transparent',
+        background: scrolled ? '#000000' : 'transparent',
         color: '#FFD27A',
         boxShadow: scrolled ? '0 2px 16px #0004' : 'none',
         transition: 'background 0.4s, box-shadow 0.4s',
