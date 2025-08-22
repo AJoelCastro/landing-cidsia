@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
     <AppBar
       position="fixed"
       sx={{
-        background: scrolled ? '#2C2C2C' : 'transparent',
+        background: scrolled ? '#282120' : 'transparent',
         color: '#FFD27A',
         boxShadow: scrolled ? '0 2px 16px #0004' : 'none',
         transition: 'background 0.4s, box-shadow 0.4s',
@@ -40,10 +40,7 @@ const Navbar: React.FC = () => {
         <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
           <Link href="/" passHref legacyBehavior>
             <a style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-              <Image src="/logo-horizontal.png" alt="CIDSIA Logo" width={120} height={48} style={{ marginRight: 16 }} />
-              <Typography variant="h6" sx={{ color: '#FFD27A', fontWeight: 700 }}>
-                CIDSIA
-              </Typography>
+              <Image src="/logo-horizontal.svg" alt="CIDSIA Logo" width={120} height={48} style={{ marginRight: 16 }} />
             </a>
           </Link>
         </Box>

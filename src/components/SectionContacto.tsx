@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Box, Typography, TextField, Button, Stack, Alert } from '@mui/material';
+import UbicacionMapa from './UbicacionMapa';
 
 const SectionContacto: React.FC = () => {
   const [form, setForm] = useState({ nombre: '', email: '', mensaje: '' });
@@ -56,6 +57,13 @@ const SectionContacto: React.FC = () => {
         </Button>
         {enviado && <Alert severity="success">¡Mensaje enviado! Nos pondremos en contacto pronto.</Alert>}
       </Stack>
+      <Box mt={6}>
+        <Typography variant="h5" fontWeight={600} color="primary.main" textAlign="center" mb={2} fontFamily="var(--font-playfair)">
+          Nuestra Ubicación
+        </Typography>
+        {/* Cambia los valores de lat, lng y zoom según tu ubicación */}
+        <UbicacionMapa lat={-12.0464} lng={-77.0428} zoom={16} height="350px" />
+      </Box>
     </Box>
   );
 };

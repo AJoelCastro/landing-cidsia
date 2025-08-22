@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 
 import "./globals.css";
 import MuiProvider from '../components/MuiProvider';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +14,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{ background: '#F9F9F9', color: '#1A1A1A' }}>
+  <body className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`} style={{ background: '#F9F9F9', color: '#1A1A1A' }}>
         <MuiProvider>
           {children}
           <FloatingWhatsAppButton />
